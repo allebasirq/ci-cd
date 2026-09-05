@@ -1,0 +1,28 @@
+name: Run Tests
+
+on:
+  push:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      # Take the code from my GitHub repository and put it onto the temporary machine.
+      - name: Get code
+        uses: actions/checkout@v4
+
+      # Give this machine Python 3.12
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      # Run a terminal command on the GitHub machine.
+      - name: Install pytest
+        run: pip install pytest
+
+      # Run the actual test
+      - name: Run tests
+        run: pytest
