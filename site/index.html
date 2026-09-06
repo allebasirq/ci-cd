@@ -11,12 +11,61 @@
         <h1>Calculator</h1>
 
         <input type="number" id="num1">
-        <imput type="number" id="num2">
+        <input type="number" id="num2">
 
         <button onclick="add()">+</button>
         <button onclick="subtract()">-</button>
         <button onclick="multiply()">×</button>
         <button onclick="divide()">÷</button>
+
+        <script>
+
+            function add() {
+                const num1 = Number(document.getElementById("num1").value);
+                const num2 = Number(document.getElementById("num2").value);
+
+                document.getElementById("result").textContent = num1 + num2;
+            }
+
+        </script>
+
+        <script>
+
+            function subtract() {
+                const num1 = Number(document.getElementById("num1").value);
+                const num2 = Number(document.getElementById("num2").value);
+
+                document.getElementById("result").textContent = num1 - num2;
+            }
+
+        </script>
+
+        <script>
+
+            function multiply() {
+                const num1 = Number(document.getElementById("num1").value);
+                const num2 = Number(document.getElementById("num2").value);
+
+                document.getElementById("result").textContent = num1 * num2;
+            }
+
+        </script>
+
+        <script>
+
+            function divide() {
+                const num1 = Number(document.getElementById("num1").value);
+                const num2 = Number(document.getElementById("num2").value);
+
+                if(num2 == 0) {
+                    document.getElementById("result").textContent = "Error: cannot divide by zero";
+                    return;
+                }
+
+                document.getElementById("result").textContent = num1 / num2;
+            }
+
+        </script>
 
         <h2 id="result"></h2>
 
